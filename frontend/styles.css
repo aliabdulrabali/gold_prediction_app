@@ -1,0 +1,170 @@
+:root {
+    --primary-color: #ffc107;
+    --secondary-color: #6c757d;
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: var(--dark-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-title {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.current-price-card {
+    background: linear-gradient(135deg, #343a40 0%, #121416 100%);
+    color: white;
+}
+
+.current-price-card .card-title {
+    color: #f8f9fa;
+}
+
+.price-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 15px 0;
+    color: var(--primary-color);
+}
+
+.price-change {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.price-change.positive {
+    color: var(--success-color);
+}
+
+.price-change.negative {
+    color: var(--danger-color);
+}
+
+.price-timestamp {
+    font-size: 0.85rem;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    padding: 10px;
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.time-range-btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #212529;
+}
+
+.prediction-summary {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.model-card {
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+.model-card:hover {
+    transform: translateY(-5px);
+}
+
+.model-card .card-header {
+    background-color: rgba(255, 193, 7, 0.1);
+    font-weight: 600;
+}
+
+.model-metric {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.model-metric-value {
+    font-weight: 600;
+}
+
+.date-filter {
+    max-width: 200px;
+}
+
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    margin-top: auto;
+}
+
+/* Toast styling */
+.toast {
+    background-color: white;
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .price-display {
+        font-size: 2rem;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+    
+    .date-filter {
+        max-width: 150px;
+    }
+}
