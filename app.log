@@ -1,0 +1,121 @@
+nohup: ignoring input
+2025-04-07 12:09:57,037 - matplotlib - WARNING - 
+Bad key font.manager.use_fontconfig in file /home/ubuntu/.config/matplotlib/matplotlibrc, line 33 ('font.manager.use_fontconfig : True')
+You probably need to get an updated matplotlibrc file from
+https://github.com/matplotlib/matplotlib/blob/v3.8.0/lib/matplotlib/mpl-data/matplotlibrc
+or from the matplotlib source distribution
+2025-04-07 12:09:58.477196: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2025-04-07 12:09:58.537751: E tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:9342] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-04-07 12:09:58.537802: E tensorflow/compiler/xla/stream_executor/cuda/cuda_fft.cc:609] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-04-07 12:09:58.537846: E tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:1518] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-04-07 12:09:58.549667: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2025-04-07 12:09:58.550006: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-04-07 12:09:59.887532: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-04-07 12:10:00,787 - database - INFO - Database initialized at sqlite:///./gold_prices.db
+/home/ubuntu/gold_prediction_app/backend/main.py:275: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+2025-04-07 12:10:00,933 - data_fetcher - ERROR - Failed to fetch data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:00,935 - database - ERROR - CSV file ../data/historical_gold_prices.csv does not exist
+2025-04-07 12:10:00,935 - data_fetcher - INFO - Fetching historical data for 20250407
+2025-04-07 12:10:01,031 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:01,033 - data_fetcher - WARNING - Skipping date 20250407 due to error: API request failed with status code 403
+2025-04-07 12:10:02,035 - data_fetcher - INFO - Fetching historical data for 20250406
+2025-04-07 12:10:02,196 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:02,197 - data_fetcher - WARNING - Skipping date 20250406 due to error: API request failed with status code 403
+2025-04-07 12:10:03,199 - data_fetcher - INFO - Fetching historical data for 20250405
+2025-04-07 12:10:03,294 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:03,295 - data_fetcher - WARNING - Skipping date 20250405 due to error: API request failed with status code 403
+2025-04-07 12:10:04,297 - data_fetcher - INFO - Fetching historical data for 20250404
+2025-04-07 12:10:04,384 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:04,386 - data_fetcher - WARNING - Skipping date 20250404 due to error: API request failed with status code 403
+2025-04-07 12:10:05,387 - data_fetcher - INFO - Fetching historical data for 20250403
+2025-04-07 12:10:05,486 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:05,488 - data_fetcher - WARNING - Skipping date 20250403 due to error: API request failed with status code 403
+2025-04-07 12:10:06,490 - data_fetcher - INFO - Fetching historical data for 20250402
+2025-04-07 12:10:06,587 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:06,588 - data_fetcher - WARNING - Skipping date 20250402 due to error: API request failed with status code 403
+2025-04-07 12:10:07,590 - data_fetcher - INFO - Fetching historical data for 20250401
+2025-04-07 12:10:07,684 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:07,687 - data_fetcher - WARNING - Skipping date 20250401 due to error: API request failed with status code 403
+2025-04-07 12:10:08,688 - data_fetcher - INFO - Fetching historical data for 20250331
+2025-04-07 12:10:08,784 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:08,786 - data_fetcher - WARNING - Skipping date 20250331 due to error: API request failed with status code 403
+2025-04-07 12:10:09,787 - data_fetcher - INFO - Fetching historical data for 20250330
+2025-04-07 12:10:09,879 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:09,880 - data_fetcher - WARNING - Skipping date 20250330 due to error: API request failed with status code 403
+2025-04-07 12:10:10,882 - data_fetcher - INFO - Fetching historical data for 20250329
+2025-04-07 12:10:10,970 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:10,971 - data_fetcher - WARNING - Skipping date 20250329 due to error: API request failed with status code 403
+2025-04-07 12:10:11,973 - data_fetcher - INFO - Fetching historical data for 20250328
+2025-04-07 12:10:12,060 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:12,062 - data_fetcher - WARNING - Skipping date 20250328 due to error: API request failed with status code 403
+2025-04-07 12:10:13,064 - data_fetcher - INFO - Fetching historical data for 20250327
+2025-04-07 12:10:13,199 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:13,201 - data_fetcher - WARNING - Skipping date 20250327 due to error: API request failed with status code 403
+2025-04-07 12:10:14,202 - data_fetcher - INFO - Fetching historical data for 20250326
+2025-04-07 12:10:14,290 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:14,291 - data_fetcher - WARNING - Skipping date 20250326 due to error: API request failed with status code 403
+2025-04-07 12:10:15,293 - data_fetcher - INFO - Fetching historical data for 20250325
+2025-04-07 12:10:15,379 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:15,381 - data_fetcher - WARNING - Skipping date 20250325 due to error: API request failed with status code 403
+2025-04-07 12:10:16,383 - data_fetcher - INFO - Fetching historical data for 20250324
+2025-04-07 12:10:16,477 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:16,479 - data_fetcher - WARNING - Skipping date 20250324 due to error: API request failed with status code 403
+2025-04-07 12:10:17,481 - data_fetcher - INFO - Fetching historical data for 20250323
+2025-04-07 12:10:17,581 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:17,583 - data_fetcher - WARNING - Skipping date 20250323 due to error: API request failed with status code 403
+2025-04-07 12:10:18,585 - data_fetcher - INFO - Fetching historical data for 20250322
+2025-04-07 12:10:18,681 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:18,683 - data_fetcher - WARNING - Skipping date 20250322 due to error: API request failed with status code 403
+2025-04-07 12:10:19,685 - data_fetcher - INFO - Fetching historical data for 20250321
+2025-04-07 12:10:19,786 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:19,788 - data_fetcher - WARNING - Skipping date 20250321 due to error: API request failed with status code 403
+2025-04-07 12:10:20,790 - data_fetcher - INFO - Fetching historical data for 20250320
+2025-04-07 12:10:20,897 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:20,899 - data_fetcher - WARNING - Skipping date 20250320 due to error: API request failed with status code 403
+2025-04-07 12:10:21,901 - data_fetcher - INFO - Fetching historical data for 20250319
+2025-04-07 12:10:21,990 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:21,992 - data_fetcher - WARNING - Skipping date 20250319 due to error: API request failed with status code 403
+2025-04-07 12:10:22,994 - data_fetcher - INFO - Fetching historical data for 20250318
+2025-04-07 12:10:23,085 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:23,086 - data_fetcher - WARNING - Skipping date 20250318 due to error: API request failed with status code 403
+2025-04-07 12:10:24,088 - data_fetcher - INFO - Fetching historical data for 20250317
+2025-04-07 12:10:24,189 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:24,190 - data_fetcher - WARNING - Skipping date 20250317 due to error: API request failed with status code 403
+2025-04-07 12:10:25,192 - data_fetcher - INFO - Fetching historical data for 20250316
+2025-04-07 12:10:25,280 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:25,282 - data_fetcher - WARNING - Skipping date 20250316 due to error: API request failed with status code 403
+2025-04-07 12:10:26,283 - data_fetcher - INFO - Fetching historical data for 20250315
+2025-04-07 12:10:26,371 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:26,372 - data_fetcher - WARNING - Skipping date 20250315 due to error: API request failed with status code 403
+2025-04-07 12:10:27,374 - data_fetcher - INFO - Fetching historical data for 20250314
+2025-04-07 12:10:27,464 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:27,466 - data_fetcher - WARNING - Skipping date 20250314 due to error: API request failed with status code 403
+2025-04-07 12:10:28,468 - data_fetcher - INFO - Fetching historical data for 20250313
+2025-04-07 12:10:28,566 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:28,569 - data_fetcher - WARNING - Skipping date 20250313 due to error: API request failed with status code 403
+2025-04-07 12:10:29,571 - data_fetcher - INFO - Fetching historical data for 20250312
+2025-04-07 12:10:29,698 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:29,700 - data_fetcher - WARNING - Skipping date 20250312 due to error: API request failed with status code 403
+2025-04-07 12:10:30,702 - data_fetcher - INFO - Fetching historical data for 20250311
+2025-04-07 12:10:30,798 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:30,800 - data_fetcher - WARNING - Skipping date 20250311 due to error: API request failed with status code 403
+2025-04-07 12:10:31,802 - data_fetcher - INFO - Fetching historical data for 20250310
+2025-04-07 12:10:31,897 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:31,900 - data_fetcher - WARNING - Skipping date 20250310 due to error: API request failed with status code 403
+2025-04-07 12:10:32,901 - data_fetcher - INFO - Fetching historical data for 20250309
+2025-04-07 12:10:33,014 - data_fetcher - ERROR - Failed to fetch historical data: 403 - {"error":"No API Key provided"}
+2025-04-07 12:10:33,016 - data_fetcher - WARNING - Skipping date 20250309 due to error: API request failed with status code 403
+2025-04-07 12:10:33,017 - database - ERROR - CSV file ../data/historical_gold_prices.csv does not exist
+INFO:     Started server process [4373]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 8000): address already in use
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
