@@ -285,22 +285,38 @@ async def get_dashboard():
 # Mount static files for frontend
 @app.on_event("startup")
 async def startup_event():
-    try:
-        latest = db_manager.get_latest_price()
-        if not latest:
-            logger.info("[Startup] No price data found. Fetching and importing historical data...")
-            data_fetcher.backfill_historical_data(days=60)  # write to CSV
-            db_manager.import_from_csv()                    # write to DB
-            logger.info("[Startup] Historical data saved to DB.")
-        else:
-            logger.info("[Startup] DB already has data.")
-    except Exception as e:
-        logger.error(f"[Startup] Failed to fetch/import data: {e}")
+    import os
+
+    # Get absolute path to /app/frontend
+    frontend_dir = os.path.join(os.path.dirname(__file__), "..", "frontend")
+    os.makedirs(frontend_dir, exist_ok=True)
+
+    index_path = os.path.join(frontend_dir, "index.html")
+    css_path = os.path.join(frontend_dir, "styles.css")
+    js_path = os.path.join(frontend_dir, "app.js")
+
+    logger.info(f"[Startup] Writing frontend files to: {frontend_dir}")
+
+    if not os.path.exists(index_path):
+        with open(index_path, "w") as f:
+            f.write("""<!DOCTYPE html>
+            <html lang="en">
+            <!-- Your full HTML content here -->
+            </html>""")
+
+    if not os.path.exists(css_path):
+        with open(css_path, "w") as f:
+            f.write("""/* Your full CSS styles here */""")
+
+    if not os.path.exists(js_path):
+        with open(js_path, "w") as f:
+            f.write("""// Your full JavaScript here */""")
 
 
     
     # Create a simple CSS file if it doesn't exist
-    css_path = "../frontend/styles.css"
+    frontend_dir = os.path.join(os.path.dirname(__file__), "..", "frontend")
+    css_path = os.path.join(frontend_dir, "styles.css")
     if not os.path.exists(css_path):
         with open(css_path, "w") as f:
             f.write("""
@@ -720,7 +736,7 @@ async def startup_event():
             """)
     
     # Mount the static files
-    app.mount("/", StaticFiles(directory="../frontend"), name="frontend")
+    app.mount("/", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "..", "frontend")), name="frontend")
 
 # Run the application
 if __name__ == "__main__":
