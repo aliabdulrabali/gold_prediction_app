@@ -285,67 +285,22 @@ async def get_dashboard():
 # Mount static files for frontend
 @app.on_event("startup")
 async def startup_event():
-    # Create frontend directory if it doesn't exist
+    # Make sure frontend folder exists
     os.makedirs("../frontend", exist_ok=True)
-    
-    # Create a simple index.html if it doesn't exist
-    index_path = "../frontend/index.html"
-    if not os.path.exists(index_path):
-        with open(index_path, "w") as f:
-            f.write("""
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Gold Price Prediction Dashboard</title>
-                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2"></script>
-                <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
-                <link rel="stylesheet" href="styles.css">
-            </head>
-            <body>
-                <div class="container">
-                    <h1>Gold Price Prediction Dashboard</h1>
-                    <div class="current-price">
-                        <h2>Current Gold Price</h2>
-                        <div id="price-display">Loading...</div>
-                    </div>
-                    <div class="chart-container">
-                        <h2>Historical Prices</h2>
-                        <canvas id="historyChart"></canvas>
-                    </div>
-                    <div class="chart-container">
-                        <h2>Price Predictions</h2>
-                        <div class="model-selector">
-                            <label for="model-select">Prediction Model:</label>
-                            <select id="model-select">
-                                <option value="ensemble">Ensemble (All Models)</option>
-                                <option value="lstm">LSTM</option>
-                                <option value="linear_regression">Linear Regression</option>
-                                <option value="random_forest">Random Forest</option>
-                                <option value="prophet">Prophet</option>
-                            </select>
-                            <label for="days-select">Days to Predict:</label>
-                            <select id="days-select">
-                                <option value="1">1 Day</option>
-                                <option value="3">3 Days</option>
-                                <option value="7" selected>7 Days</option>
-                                <option value="14">14 Days</option>
-                                <option value="30">30 Days</option>
-                            </select>
-                        </div>
-                        <canvas id="predictionChart"></canvas>
-                    </div>
-                    <div class="actions">
-                        <button id="refresh-btn">Refresh Data</button>
-                        <button id="train-btn">Train Models</button>
-                    </div>
-                </div>
-                <script src="app.js"></script>
-            </body>
-            </html>
-            """)
+
+    # Auto-fetch historical data if the DB is empty
+    try:
+        latest = db_manager.get_latest_price()
+        if not latest:
+            print("[Startup] No price data found. Fetching historical prices...")
+            data_fetcher.backfill_historical_data(days=60)
+            db_manager.import_from_csv()
+            print("[Startup] Historical data fetched and saved.")
+        else:
+            print("[Startup] Price data already exists.")
+    except Exception as e:
+        logger.error(f"[Startup] Failed to fetch/import data: {e}")
+
     
     # Create a simple CSS file if it doesn't exist
     css_path = "../frontend/styles.css"
