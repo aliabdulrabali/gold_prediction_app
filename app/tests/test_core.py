@@ -10,9 +10,10 @@ from datetime import datetime
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import modules to test
-from data_fetcher import GoldDataFetcher
-from database import DatabaseManager, GoldPrice
-from predictor import GoldPricePredictor
+from app.data_fetcher import GoldDataFetcher
+from app.database import DatabaseManager
+from app.predictor import GoldPricePredictor
+
 
 class TestGoldDataFetcher(unittest.TestCase):
     """Test the GoldDataFetcher class"""

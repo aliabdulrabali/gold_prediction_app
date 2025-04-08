@@ -19,10 +19,11 @@ import logging
 import pandas as pd
 import json
 
-from data_fetcher import GoldDataFetcher
-from database import DatabaseManager
-from predictor import GoldPricePredictor
-from config import PREDICTION_DAYS, DATA_PATH
+from app.data_fetcher import GoldDataFetcher
+from app.database import DatabaseManager
+from app.predictor import GoldPricePredictor
+from app.config import PREDICTION_DAYS, DATA_PATH
+
 
 # Configure logging
 logging.basicConfig(
