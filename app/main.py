@@ -285,21 +285,18 @@ async def get_dashboard():
 # Mount static files for frontend
 @app.on_event("startup")
 async def startup_event():
-    # Make sure frontend folder exists
-    os.makedirs("../frontend", exist_ok=True)
-
-    # Auto-fetch historical data if the DB is empty
     try:
         latest = db_manager.get_latest_price()
         if not latest:
-            print("[Startup] No price data found. Fetching historical prices...")
-            data_fetcher.backfill_historical_data(days=60)
-            db_manager.import_from_csv()
-            print("[Startup] Historical data fetched and saved.")
+            logger.info("[Startup] No price data found. Fetching and importing historical data...")
+            data_fetcher.backfill_historical_data(days=60)  # write to CSV
+            db_manager.import_from_csv()                    # write to DB
+            logger.info("[Startup] Historical data saved to DB.")
         else:
-            print("[Startup] Price data already exists.")
+            logger.info("[Startup] DB already has data.")
     except Exception as e:
         logger.error(f"[Startup] Failed to fetch/import data: {e}")
+
 
     
     # Create a simple CSS file if it doesn't exist
