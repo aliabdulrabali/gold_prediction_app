@@ -1,4 +1,8 @@
-from fastapi import FastAPI, HTTPException, Query, Depends
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+from fastapi import FastAPI`nfrom dotenv import load_dotenv`nimport os`nload_dotenv()`nGOLD_API_KEY = os.getenv("GOLD_API_KEY"), HTTPException, Query, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse, FileResponse
